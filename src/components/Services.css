@@ -24,6 +24,9 @@
   text-align: center;
   padding: 30px 20px;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card:hover {
@@ -48,18 +51,24 @@
   line-height: 1.6;
   margin-bottom: 20px;
   font-size: 0.95rem;
+  flex-grow: 1;
 }
 
 .service-link {
-  color: #FDB913;
+  color: #fbbf24;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  margin-top: auto;
 }
 
 .service-link:hover {
-  color: #e5a510;
-  text-decoration: underline;
+  color: white;
+  background-color: #f59e0b;
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {

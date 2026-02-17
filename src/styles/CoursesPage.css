@@ -1,0 +1,149 @@
+.courses-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.courses-header {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  padding: 6rem 2rem 3rem;
+  margin-top: 80px;
+  border-bottom: 3px solid #fbbf24;
+}
+
+.courses-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.courses-header h1 {
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.courses-breadcrumb {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.courses-breadcrumb a {
+  color: #fbbf24;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.courses-breadcrumb a:hover {
+  color: #f59e0b;
+  text-decoration: underline;
+}
+
+.courses-section {
+  flex-grow: 1;
+  padding: 4rem 2rem;
+  background-color: white;
+  margin-top: 3rem;
+}
+
+.courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.courses-content h2 {
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.courses-content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 2.5rem;
+  text-align: justify;
+}
+
+.btn-courses-online {
+  display: inline-block;
+  background-color: #fbbf24;
+  color: #1f2937;
+  padding: 0.75rem 2.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-courses-online:hover {
+  background-color: #f59e0b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(251, 191, 36, 0.3);
+}
+
+.courses-carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .courses-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .courses-header h1 {
+    font-size: 2rem;
+  }
+
+  .courses-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .courses-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-header {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .courses-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .courses-section {
+    padding: 2rem 1rem;
+  }
+
+  .courses-container {
+    gap: 1.5rem;
+  }
+
+  .courses-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .courses-content p {
+    font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .btn-courses-online {
+    display: block;
+    text-align: center;
+  }
+}
