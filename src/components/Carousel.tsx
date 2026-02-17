@@ -1,8 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Carousel.css';
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const slides = [
     {
@@ -20,27 +24,72 @@ const Carousel = () => {
   ];
 
   useEffect(() => {
+    if (isInteracting) return;
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [slides.length]);
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
+  }, [slides.length, isInteracting]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+    setIsInteracting(true);
+    setTimeout(() => setIsInteracting(false), 8000);
+  };
+
+  const nextSlideWithPause = () => {
+    nextSlide();
+    setIsInteracting(true);
+    setTimeout(() => setIsInteracting(false), 8000);
+  };
+
+  const prevSlideWithPause = () => {
+    prevSlide();
+    setIsInteracting(true);
+    setTimeout(() => setIsInteracting(false), 8000);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    const swipeThreshold = 50;
+    const difference = touchStart - touchEnd;
+
+    if (Math.abs(difference) > swipeThreshold) {
+      if (difference > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      setIsInteracting(true);
+      setTimeout(() => setIsInteracting(false), 8000);
+    }
+  };
+
   return (
-    <div className="carousel">
+    <div 
+      className="carousel"
+      ref={carouselRef}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -54,10 +103,10 @@ const Carousel = () => {
         </div>
       ))}
 
-      <button className="carousel-btn prev" onClick={prevSlide}>
+      <button className="carousel-btn prev" onClick={prevSlideWithPause}>
         ‹
       </button>
-      <button className="carousel-btn next" onClick={nextSlide}>
+      <button className="carousel-btn next" onClick={nextSlideWithPause}>
         ›
       </button>
 
