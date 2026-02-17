@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 250" width="1200" height="250">
+  <!-- Symbol on the left -->
+  <g transform="translate(65, 125)">
+    <!-- Blue triangular shape -->
+    <path d="M -50,-50 L 50,-50 L 0,0 Z" fill="url(#blueGradient)" stroke="white" stroke-width="3"/>
+    <path d="M -50,50 L 50,50 L 0,0 Z" fill="url(#yellowGradient)" stroke="white" stroke-width="3"/>
+    <path d="M -50,-50 L -50,50 L 0,0 Z" fill="url(#blueGradient2)" stroke="white" stroke-width="3"/>
+    <path d="M 50,-50 L 50,50 L 0,0 Z" fill="url(#greenGradient)" stroke="white" stroke-width="3"/>
+    
+    <!-- White X in center -->
+    <line x1="-25" y1="-25" x2="25" y2="25" stroke="white" stroke-width="6"/>
+    <line x1="25" y1="-25" x2="-25" y2="25" stroke="white" stroke-width="6"/>
+  </g>
+
+  <!-- COLEGAS text -->
+  <text x="180" y="140" font-family="Arial, sans-serif" font-size="100" font-weight="bold" fill="url(#textBlueGradient)" stroke="white" stroke-width="2">COLEGAS</text>
+  
+  <!-- INTELIGENCIA COLABORATIVA text -->
+  <text x="235" y="195" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#4A7BA7" letter-spacing="8">INTELIGENCIA COLABORATIVA</text>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B9BD5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A7BA7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6BB1E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5B9BD5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="yellowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDB913;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E5A610;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7CB342;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#689F38;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textBlueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6BB1E8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5B9BD5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5B9BD5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

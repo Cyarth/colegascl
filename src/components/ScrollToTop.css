@@ -1,0 +1,57 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 999;
+}
+
+.scroll-button {
+  width: 50px;
+  height: 50px;
+  background: #FDB913;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  animation: slideUp 0.3s ease-out;
+}
+
+.scroll-button:hover {
+  background: #f5aa00;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-button:active {
+  transform: translateY(-1px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 80px;
+    right: 15px;
+  }
+
+  .scroll-button {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
